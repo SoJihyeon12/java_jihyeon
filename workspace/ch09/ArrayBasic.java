@@ -4,7 +4,7 @@ public class ArrayBasic {
 
     public static void main(String[] args){
         // scores int 배열을 선언하고 생성하세요.(크기는 3)
-        int[] scores = new int[3]; // 3개의 int형 배열 선언
+        int[] scores = new int[3];
 
         // names String 배열을 선언하고 생성하세요.(크기는 3)
 //        String[] names = new String[3];

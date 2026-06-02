@@ -17,7 +17,7 @@ public class Game {
 
         enemyHp = (int)(Math.random() * 90) + 10; // 10 ~ 99
 
-        while(true){ // 조건없이 무한반복, 항상 true라는 소리
+        while(true){
             System.out.println(enemyHp + " 체력을 가진 적을 만났다. 어떤 행동을 하시겠습니까?");
             System.out.println("1) 싸운다 2) 도망간다 3) HP를 10 회복한다 4) 필살기 사용");
             int action = s.nextInt();
@@ -25,18 +25,18 @@ public class Game {
             switch(action){
                 case 1 -> {
                     System.out.println("적과 싸웁니다.");
-                    enemyDamage  = (int)(Math.random() * 11); // 0 ~ 10
+                    enemyDamage  = (int)(Math.random() * 11);
                     enemyHp -= enemyDamage;
-                    damage = (int)(Math.random() * 11); // 0 ~ 10
+                    damage = (int)(Math.random() * 11);
                     hp -= damage;
                     System.out.println("적에게 " + enemyDamage + "의 데미지를 주고 " + damage + "의 데미지를 입었다.");
                     System.out.println("나의 남은 체력은 " + hp + "입니다.");
                     System.out.println("적의 남은 체력은 " + enemyHp + "입니다.");
                 }
                 case 2 -> {
-                    damage = (int)(Math.random() * 3); // 0 ~ 2
+                    damage = (int)(Math.random() * 3);
                     hp -= damage;
-                    enemyHp = (int)(Math.random() * 90) + 10; // 10 ~ 99, 적의 체력을 10 ~ 99로 랜덤생성
+                    enemyHp = (int)(Math.random() * 90) + 10; // 10 ~ 99
                     System.out.println("도망간다. 대신 " + damage + "의 체력이 소비되었다.");
                     System.out.println("남은 체력은 " + hp + "입니다.");
                 }
@@ -47,9 +47,9 @@ public class Game {
                 }
                 case 4 -> {
                     if(ultimateSkill > 0){
-                        int chance = (int)(Math.random() * 2); //(Math.random() * 2)= 0 ~ 1.999.., int했으니까 0 ~ 1
-                        enemyDamage = enemyHp * chance;        // chance는 필살기 성공이 0아니면 1이라는 소리, 실패 아님 성공
-                        enemyHp -= enemyDamage;               //chance가 0이면 적데미지가0이고 적에너지에 그 0차감, 적에너지 변화없음
+                        int chance = (int)(Math.random() * 2);
+                        enemyDamage = enemyHp * chance;
+                        enemyHp -= enemyDamage;
                         damage = 0;
                         ultimateSkill--;
                         System.out.println("궁극의 필살기를 사용했다.");
