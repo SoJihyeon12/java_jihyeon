@@ -3,7 +3,7 @@ package ch05;
 public class TypeCastingTest {
     static void main() {
         int a =2100000000;
-        double b = a;   // 자동 형변환(a가 double로 변환)
+        double b = a;   // 자동 형변환(a가 double 타입의 b로 변환됨)
 
         System.out.println(a);
         System.out.println(b);

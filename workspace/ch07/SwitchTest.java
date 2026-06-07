@@ -7,7 +7,7 @@ public class SwitchTest {
 
         if(month < 1 || month > 12) { //month가 1보다 작거나 12보다 크면
             System.out.println("1~12 사이의 숫자를 입력해야 합니다.");
-            System.exit(0);
+            System.exit(0); //프로그램을 즉시 종료하는 명령어, status가 0이면 정상종료
         }
 
         // v04

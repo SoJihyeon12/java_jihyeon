@@ -8,7 +8,7 @@ public class ArrayMemory {
         scores[0] = 90;
 
         System.out.println(age);
-        System.out.println(scores);
+        System.out.println(scores); // 아직 값을 안넣은 상태라 주소값을 나타냄
         System.out.println(scores[0]);
     }
 }

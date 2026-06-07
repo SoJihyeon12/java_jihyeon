@@ -8,8 +8,14 @@ public class MethodSolve {
         for(int score : scores){
             total += score;
         }
-        return total;
-    }
+        return total; // return의 의미는 total 값을 이 메서드를 호출한 곳으로 돌려주라는 것, 출력은 안함
+    }                 // return을 사용하는 이유는 메서드가 계산한 결과를 다른 곳에서 다시 사용하기 위해서이다.
+
+//    for(int score : scores)는 아래와 같다. 반복문이 돌 때마다 score 값이 바뀜
+//    for (int i = 0; i < scores.length; i++) {
+//        int score = scores[i];          여기서 int score 선언됨
+//    }
+
 
     // int[] 점수 배열을 전달받아서 평균을 계산해서 반환하는 메서드(avg)
     // 평균은 소수도 표현해야 함

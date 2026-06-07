@@ -5,10 +5,10 @@ import java.util.Arrays;
 public class ArrayCopyMethod {
 
     // 전달받은 배열의 모든 요소를 출력
-    static void printArr(int[] arr, String name){
-        System.out.print(name + ": ");
-        for(int elem : arr){
-            System.out.print(elem + " ");
+    static void printArr(int[] arr, String name){// void는 실행화면에 출력만 하고 값을 반환하지 않는다
+        System.out.print(name + ": ");           // printArr()는 배열(arr)과 출력할 이름(name)을 받아서 배열 내용을 출력하는 메서드
+        for(int elem : arr){                     // 출력만 하거나 작업만 할 때 void 사용
+            System.out.print(elem + " ");        // 값을 돌려줘야 할때 return 사용 → int, double, String 등을 이용함
         }
         System.out.println();
     }

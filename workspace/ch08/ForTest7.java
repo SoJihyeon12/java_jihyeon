@@ -15,7 +15,7 @@ public class ForTest7 {
         // 1~100 합계
         int num = 1;
         sum = 0;
-        while(true){
+        while(true){ // 조건이 항상 참(true)이므로 무한 반복하는 while문
             sum += num; // 0, 1, 3, 6, 10, 15...
             num++; //1, 2, 3, 4...
             if(num > 100){

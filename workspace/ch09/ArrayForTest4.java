@@ -7,7 +7,7 @@ public class ArrayForTest4 {
     public static void main(String[] args){
         System.out.println("단을 입력하세요.");
         Scanner s = new Scanner(System.in); // 사용자가 입력한 데이터를 받을때 사용
-        int dan = s.nextInt(); // 입력한 값을 int로 꺼내옴
+        int dan = s.nextInt(); // 입력한 값을 int로 받아옴
         System.out.println("입력한 단: " + dan);
 
         int[] result = new int[9]; // 구구단 결과를 저장할 배열 생성

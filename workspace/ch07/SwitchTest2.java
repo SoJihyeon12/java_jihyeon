@@ -11,9 +11,10 @@ public class SwitchTest2 {
         int price = 10000; // 정상가
         char grade = 'B'; // 회원 등급
         int discountRate = 0; // 할인율(%)
-        int lastPrice = price; // 할인가
+        int lastPrice = price; // 할인가, lastprice는 최종가격을 말하는 건데, 일단 10000원으로 설정해논것
+                                // 사실 lastprice=price는 할 필요 없는것, 그냥 int lastprice 선언만 해도됨
 
-        // if문 사용
+        // if문 사용해 회원등급의 할인율 적용하는 법
         if (grade == 'A') {
             discountRate = 50;
         } else if (grade == 'B') {
@@ -24,7 +25,7 @@ public class SwitchTest2 {
             discountRate = 0;
         }
 
-        // switch
+        // switch문 사용해 회원등급의 할인율 적용하는 법
         switch (grade) {
             case 'A': // grade == 'A'
                 discountRate = 50;

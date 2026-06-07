@@ -1,6 +1,7 @@
 package ch10;
 
 // 이름과 나이를 명령행 매개변수로 전달 받아서 출력
+// 명령행 매개변수는 Program Argument를 말함
 // java ch10.ArgsTest haru 6 -> {"haru", "6"}
 // java ch10.ArgsTest namu 9 -> {"namu", "9"}
 public class ArgsTest {

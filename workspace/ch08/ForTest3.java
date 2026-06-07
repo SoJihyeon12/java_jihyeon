@@ -9,3 +9,4 @@ public class ForTest3 {
         System.out.println("발사!!!");
     }
 }
+// i가 0이 되면 for문을 종료하고 발사!

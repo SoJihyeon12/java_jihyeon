@@ -6,6 +6,11 @@ public class ArrayBasic {
         // scores int 배열을 선언하고 생성하세요.(크기는 3)
         int[] scores = new int[3];
 
+//        int[] → 정수형 배열 타입
+//        scores → 배열 변수명(배열명)
+//                new int[3] → 크기가 3인 정수 배열 생성
+
+
         // names String 배열을 선언하고 생성하세요.(크기는 3)
 //        String[] names = new String[3];
         String[] names = new String[5];
@@ -32,7 +37,7 @@ public class ArrayBasic {
 //        System.out.println(names[3]);
 //        System.out.println(names[4]);
 
-        for(int i=0; i<names.length; i++){
+        for(int i=0; i<names.length; i++){ // names.length는 5, 조건이 i<names.length이니까 4까지만 하고 종료
             System.out.println(names[i]); // i=0 names[0]=나무, i=1 names[1]=하루, ...
         }
 

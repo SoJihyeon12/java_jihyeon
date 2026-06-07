@@ -9,7 +9,7 @@ public class WhileTest2 {
 
         while(sal < 100000000){
             month++;
-            sal *= 2;
+            sal *= 2;           //27달에 1억 안넘어서 1달더해 28달되어 month에 저장됨, 월급두배되어 1억 넘어 와일문 종료, 출력
         }
 
         System.out.println(month + "달의 급여: " + sal);

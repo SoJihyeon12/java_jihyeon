@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class ArrayCopy {
     public static void main(String[] args){
+//        얕은 복사: 주소(참조값)만 복사 → 원본과 복사본이 같은 데이터를 공유, 복사본 데이터 달라지면 원본도 달라진 그 내용이 됨
+//        깊은 복사: 데이터를 새로 복사 → 원본과 복사본이 서로 독립적
+
         // 1. 얕은 복사 (Shallow Copy)
         int[] original = {10, 20, 30};
         int[] shallow = original; // original을 복사함
@@ -16,7 +19,7 @@ public class ArrayCopy {
 
         // shallow[0] 값을 수정
         shallow[0] = 99;
-        original[0] = 88;
+        original[0] = 88; // 마지막으로 대입한 88이 shallow와 original의 0번째 배열값이 됨
 
         // original, shallow의 모든 요소를 출력
         for(int i=0; i<original.length; i++){
@@ -56,6 +59,8 @@ public class ArrayCopy {
         }
 
         // 3. 깊은 복사 (System.arraycopy() 이용)
+//        System.arraycopy()란 배열의 요소들을 한 번에 복사하는 메서드
+//        System.arraycopy(원본배열, 시작인덱스, 복사대상배열, 시작인덱스, 복사할개수);
         System.out.println("---- 3. 깊은 복사 (System.arraycopy() 이용) ----");
         original = new int[]{10, 20, 30, 40, 50};
         shallow = new int[original.length];
