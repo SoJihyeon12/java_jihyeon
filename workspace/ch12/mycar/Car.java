@@ -1,4 +1,4 @@
-package ch12.car;
+package ch12.mycar;
 
 // 필드와 메서드 정의한 클래스
 // 생성자 추가
@@ -16,26 +16,14 @@ public class Car {
 
     // 10Km/h 가속한다.
     void speedUp(){
-        speedUp(10);
-    }
-
-    // speed 만큼 가속한다.
-    // 메서드 오버로딩
-    void speedUp(int speed){
-        this.speed += speed;
-        System.out.println("가속합니다. 현재 속도는 " + this.speed + "Km/h 입니다.");
+        speed += 10;
+        System.out.println("가속합니다. 현재 속도는 " + speed + "Km/h 입니다.");
     }
 
     // 10Km/h 감속한다.
     void speedDown(){
-        speedDown(10);
-    }
-
-    // speed 만큼 감속한다.
-    // 메서드 오버로딩
-    void speedDown(int speed){
-        this.speed -= speed;
-        System.out.println("감속합니다. 현재 속도는 " + this.speed + "Km/h 입니다.");
+        speed -= 10;
+        System.out.println("감속합니다. 현재 속도는 " + speed + "Km/h 입니다.");
     }
 
     // 기어를 1단 올린다.

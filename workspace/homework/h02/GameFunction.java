@@ -1,5 +1,6 @@
 package homework.h02;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class GameFunction {
@@ -43,8 +44,9 @@ public class GameFunction {
 
     static int[] useUltimateSkill(int hp, int enemyHp, int ultimateSkill){
         if(ultimateSkill > 0){
-            int chance = (int)(Math.random() * 2);
-            int enemyDamage = enemyHp * chance;
+//            int chance = (int)(Math.random() * 2);
+            boolean chance = new Random().nextBoolean();
+            int enemyDamage = enemyHp * (chance?1:0);
             enemyHp -= enemyDamage;
             int damage = 0;
             ultimateSkill--;

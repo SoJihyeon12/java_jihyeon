@@ -1,4 +1,4 @@
-package ch12.car;
+package ch12.mycar;
 
 public class CarTest {
     void main(){
