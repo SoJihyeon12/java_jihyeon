@@ -1,77 +1,5 @@
-DROP table IF EXISTS reply;
-DROP table IF EXISTS post;
-DROP table IF EXISTS member;
-
--- DROP database IF EXISTS board_db;
--- CREATE DATABASE board_db;
-
-CREATE TABLE member (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    phone CHAR(12),
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE post (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    member_id INT,
-    title VARCHAR(200) NOT NULL,
-    content TEXT NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (member_id) REFERENCES member(id) ON DELETE SET NULL
-);
-
-CREATE TABLE reply (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    post_id INT NOT NULL,
-    member_id INT NOT NULL,
-    content TEXT NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (post_id) REFERENCES post(id) ON DELETE CASCADE,
-    FOREIGN KEY (member_id) REFERENCES member(id) ON DELETE CASCADE
-);
-
-
-INSERT INTO member
-    VALUES (NULL, 'haru@gmail.com', 'pwd123', '하루', '01011112222', DEFAULT);
-INSERT INTO member
-    VALUES (NULL, 'haru2@gmail.com', 'pwd123', '하루2', NULL, '2025-05-10 12:13:45');
-
-INSERT INTO member (email, password, name, created_at)
-    VALUES ('namu@gmail.com', 'pwd789', '나무', '2026-05-29 13:34:32');
-
-INSERT INTO member (email, password, name, phone, created_at) VALUES
-    ('harong@gmail.com', 'pwd012', '하롱이', '01022223333', '2026-04-29 13:34:32'),
-    ('yong@gmail.com', 'pwd456', '용쌤', '0103334444', '2026-06-05 14:34:12');
-
-
-
-
-INSERT INTO post (member_id, title, content, created_at)
-VALUES (1, '첫 번째 게시글', '안녕하세요. 반갑습니다.','2026-05-23 12:33:54');
-INSERT INTO post (member_id, title, content, created_at)
-VALUES (2, '질문 있습니다', '데이터베이스 기초에 대한 질문입니다.','2026-05-26 12:33:54');
-INSERT INTO post (member_id, title, content, created_at)
-VALUES (1, '두 번째 게시글', '오늘 날씨가 아주 좋습니다.','2026-05-27 12:33:54');
-INSERT INTO post (member_id, title, content, created_at)
-VALUES (2, 'MySQL 설치 오류 해결방법', '설치 중 Configurator 단계에서 오류가 날 때 대처법 공유합니다.','2026-05-29 12:33:54');
-INSERT INTO post (member_id, title, content, created_at)
-VALUES (3, '자기 소개', '안녕하세요 하롱이입니다.','2026-06-12 11:33:54');
-
-
-INSERT INTO reply (post_id, member_id, content)
-VALUES (1, 2, '환영합니다!');
-INSERT INTO reply (post_id, member_id, content)
-VALUES (1, 3, '반가워요~');
-INSERT INTO reply (post_id, member_id, content)
-VALUES (2, 1, '어떤 부분이 궁금하신가요?');
-INSERT INTO reply (post_id, member_id, content)
-VALUES (4, 3, '정말 유용한 정보네요. 감사합니다!');
-INSERT INTO reply (post_id, member_id, content)
-VALUES (4, 1, '저도 이 방법으로 해결했습니다.');
-
+-- 주말 과제입니다.
+-- 각 번호 아래에 sql을 작성해서 테스트 하세요.
 
 -- 1. post 테이블에 조회수(view_count) 컬럼을 추가하세요.(4바이트 정수형, NOT NULL, 기본값 0)
 ALTER TABLE post ADD COLUMN view_count INT NOT NULL DEFAULT 0;
@@ -97,8 +25,8 @@ INSERT INTO post (member_id, title, content, created_at, view_count) VALUES
   (1, '여섯 번째 게시글', '자바 조건문 switch-case 문 실습을 하고 있습니다.', '2026-06-13 06:00:00', 7),
   (2, '안녕 테스트 글', '이 본문에는 안녕이라는 단어가 들어갑니다. 반갑습니다.', '2026-06-13 07:00:00', 13),
   (3, '추상 클래스와 인터페이스', '둘 다 추상 메서드를 가지는데 어떤 상황에 구분해서 쓸까요?', '2026-06-13 08:00:00', 25),
-  (4, '자바 static 키워드 정리', '클래스 멤버와 인스턴스 멤버의 차이를 정리했습니다.', DEFAULT, 6),
-  (5, '자바 형변환(Casting) 복습', '기본 타입과 참조 타입의 형변환 규칙을 정리해 봅니다.', DEFAULT, 33);
+  (4, '자바 static 키워드 정리', '클래스 멤버와 인스턴스 멤버의 차이를 정리했습니다.', '2026-06-13 08:15:00', 6),
+  (5, '자바 형변환(Casting) 복습', '기본 타입과 참조 타입의 형변환 규칙을 정리해 봅니다.', '2026-06-13 08:30:00', 33);
 
 -- 3. reply 테이블에 샘플 댓글 30개를 추가하세요.(작성일은 기본값 대신 각각 다른 값으로 직접 입력하세요.)
 -- 작성일은 기본값(CURRENT_TIMESTAMP) 대신 각각 다른 값으로 직접 입력하세요.
@@ -134,25 +62,58 @@ INSERT INTO reply (post_id, member_id, content, created_at) VALUES
   (3, 5, '저도 참고해야겠습니다.', '2026-05-27 16:00:00'),
   (3, 1, '댓글 주신 분들 모두 감사드립니다.', '2026-05-27 17:00:00');
 
--- 사용자 삭제
-drop user if exists 'USER1'@'LOCALHOST';
+-- 4. post 테이블에서 조회수(view_count)가 10회 이상인 게시글의 제목, 조회수를 조회하세요.
+SELECT
+  title,
+  view_count
+FROM
+  post
+WHERE
+  view_count >= 10;
 
+-- 5. post 테이블에서 2번 회원(member_id = 2)이 작성한 모든 게시글의 작성자, 제목, 작성일을 최신순(작성일 내림차순)으로 조회하세요.
+SELECT
+  member_id,
+  title,
+  created_at
+FROM
+  post
+WHERE
+  member_id = 2
+ORDER BY
+  created_at DESC;
 
--- 로컬 호스트 전용 계정 생성
-CREATE USER 'user1'@'localhost'
-    IDENTIFIED BY '1111';
+-- 6. post 테이블에서 본문(content)에 '안녕'이 들어간 게시글 목록의 모든 컬럼을 최신순(작성일 내림차순)으로 조회하세요.
+SELECT
+  *
+FROM
+  post
+WHERE
+  content LIKE '%안녕%'
+ORDER BY
+  created_at DESC;
 
+-- 7. reply 테이블에서 3번 게시글(post_id = 3)에 달린 모든 댓글의 게시글 id, 본문, 작성일을 오래된 순(작성일 오름차순)으로 조회하세요.
+SELECT
+  post_id,
+  content,
+  created_at
+FROM
+  reply
+WHERE
+  post_id = 3
+ORDER BY
+  created_at ASC;
 
--- 개발자용 권한 그룹 생성
-CREATE ROLE 'developer';
+-- 8. 1페이지당 5개씩 게시글 목록을 보여줄 때 조회수(view_count)가 높은 순서대로 정렬하고 3페이지 게시글 목록의 id, 제목, 조회수를 조회하세요.
+SELECT
+  id,
+  title,
+  view_count
+FROM
+  post
+ORDER BY
+  view_count DESC
+LIMIT 10, 5;
 
--- 개발자 그룹에 board_db의 모든 테이블에 대한 CRUD 권한 부여
-GRANT SELECT, INSERT, UPDATE, DELETE ON board_db.* TO 'developer';
-
--- user1에게 개발자 그룹 권한 부여
-GRANT 'developer' TO 'user1'@'localhost';
-
--- user1 로그인 시 developer 권한 그룹이 기본으로 활성화되도록 설정
-SET DEFAULT ROLE 'developer' TO 'user1'@'localhost';
-
-
+-- 과제가 완료되면 본인의 github 레포지토리에 push 하세요.
