@@ -7,8 +7,14 @@
       <sourceFolder url="file://$MODULE_DIR$/workspace/02_oop" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/workspace/exam" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/workspace/homework" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/03_database" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/04_advanced" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workspace/programmers" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="mysql-connector-j-9.7.0" level="project" />
+    <orderEntry type="library" name="HikariCP-7.1.0" level="project" />
   </component>
 </module>
