@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+    new Object() - 생성자 함수로 객체 생성
+    */
+
+     // 첫번째 user
+    const haruName = '하루';
+    const haruAge = 6;
+    const haruHobby = '잠자기';
+    console.log(haruName, haruAge, haruHobby);
+
+    // 두번째 user
+    const namuName = '나무';
+    const namuAge = 9;
+    const namuHobby = '먹기';
+    console.log(namuName, namuAge, namuHobby);
+
+    
+    // Object 생성자 함수로 haru 객체 생성
+    const haru = new Object();
+    
+
+    // haru 객체에 name 속성을 추가(점 표기법)
+    haru.name = '하루';
+    // haru 객체에 age 속성을 추가(점 표기법)
+    haru.age = 6;
+    // haru 객체에 hobby 속성을 추가(대괄호 표기법)
+    haru['hobby'] = '잠자기';
+    console.log(haru.name, haru.age, haru.hobby);
+    console.log(haru);
+    
+    // Object 생성자 함수로 namu 객체 생성
+    const namu = new Object();
+
+    // namu 객체에 name 속성을 추가(점 표기법)
+    namu.name = '나무';
+    // namu 객체에 age 속성을 추가(점 표기법)
+    namu.age = 9;
+    // namu 객체에 hobby 속성을 추가(대괄호 표기법)
+    namu['hobby'] = '먹기'
+    console.log(namu.name, namu.age, namu.hobby);
+    console.log(namu);
+
+  </script>
+</head>
+<body>
+  <h1>10-02 new Object() - 생성자 함수로 객체 생성</h1>
+</body>
+</html>

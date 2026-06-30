@@ -1,0 +1,81 @@
+.container {
+  display: grid;
+  border: 5px solid blue;
+  block-size: 510px;
+  grid-template-columns: 100px repeat(2, 1fr) 200px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    'cell9 cell9 cell10 cell11'
+    'cell9 cell9 cell1 cell1'
+    'cell2 cell3 cell5 cell7'
+    'cell6 cell6 cell4 cell4'
+    'cell6 cell6 cell12 cell8';
+
+  .cell-1 {
+    background: yellow;
+    /* grid-column: 2 / 3;
+    grid-row: 6 / 8; */
+    grid-area: cell1;
+  }
+
+  .cell-2 {
+    background: pink;
+    grid-area: cell2;
+  }
+
+  .cell-3 {
+    background: lime;
+    grid-area: cell3;
+  }
+
+  .cell-4 {
+    background: skyblue;
+    grid-area: cell4;
+  }
+
+  .cell-5 {
+    background: orange;
+    grid-area: cell5;
+  }
+
+  .cell-6 {
+    background: silver;
+    grid-area: cell6;
+  }
+
+  .cell-7 {
+    background: purple;
+    color: white;
+    grid-area: cell7;
+  }
+
+  .cell-8 {
+    background: teal;
+    color: white;
+    grid-area: cell8;
+  }
+
+  .cell-9 {
+    background: brown;
+    color: white;
+    grid-area: cell9;
+  }
+
+  .cell-10 {
+    background: aqua;
+    grid-area: cell10;
+  }
+
+  .cell-11 {
+    background: olivedrab;
+    color: white;
+    grid-area: cell11;
+  }
+
+  .cell-12 {
+    background: darkblue;
+    color: white;
+    grid-area: cell12;
+  }
+}

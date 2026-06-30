@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+    산술 연산자 +, -, *, /, %, **
+    */
+    let age1 = 1 + 4; // 5
+    let age2 = 1 + 4 * 5; // 21
+    let age3 = (1 + 4) * 5; // 25
+    let age4 = 9 / 4 ; // 2.25
+    let age5 = 9 % 4; // 1 (%, 나머지 연산자)
+    let age6 = 2 ** 3; // 8 (** 거듭제곱 연산자)
+    let age7 = '나이는 ' + age1 + ' 입니다.'; // 나이는 5 입니다. (+, 결합 연산자)
+    console.log(age1, age2, age3, age4, age5, age6, age7);
+
+    /*
+    대입 연산자 =, +=, -=, *=, /=, %=, **=
+    */
+    let age = 20;
+    let year = 3 + 2; // year = 5
+    age = age + year; // age = 20 + 5 = 25
+    age += year; // age = age + year = 25 + 5 = 30
+    console.log(age, year);
+
+
+    /*
+    비교 연산자 >, >=, <, <=, ==, !=, ===, !==
+    */
+    let result1 = 1 > 2; // false
+    let result2 = 10 <= 10; // true
+    let result3 = 100 == '100'; // true
+    let result4 = 100 === '100'; // false
+    let result5 = 100 != 100; // false
+    console.log(result1, result2, result3, result4, result5);
+
+    
+
+    /*
+    동등 연산자와 일치 연산자 차이
+    */
+
+    
+
+    /*
+    논리 연산자 &&, ||, !
+    */
+
+    // 논리합(OR)
+    // 피연산자 둘 중 하나라도 true일 경우 true가 됨
+    console.log(true || true); // true
+    console.log(true || false); // true
+    console.log(false || true); // true
+    console.log(false || false); // false
+
+    // ID 유효성 검사(4글자에서 12글자로 입력)
+    let id = 'asa';
+    const invalidId1 = id.length < 4 || id.length > 12;
+    const invalidId2 = !(id.length >= 4 && id.length <= 12);
+    
+    console.log('id 입력 조건에 맞지 않음', invalidId1, invalidId2);
+
+    // OR 연산자의 특징
+    // 앞의 값이 truthy 라면 앞의 값을 반환
+    // 앞의 값이 falsy 라면 뒤의 값을 반환
+    console.log('hello' || 'world');
+    console.log(90 || 100);
+    console.log(0 || 200);
+    console.log(null || 'guest');
+    console.log(undefined || 'guest');
+    console.log('' || 'guest');
+
+    // 논리곱(AND)
+    // 피연산자 둘 다 true일 경우 true가 됨
+    // 앞의 값이 true면 결과는 뒤의 값
+    // 앞의 값이 false면 결과는 앞의 값
+    console.log(true && true); // true
+    console.log(true && false); // false
+    console.log(false && true); // false
+    console.log(false && false); // false
+    
+
+    // AND 연산자의 특징
+    // 앞의 값이 truthy 라면 뒤의 값을 반환
+    // 앞의 값이 falsy 라면 앞의 값을 반환
+    let userName;
+   // let userName = '하루';
+
+   // null, undefined 체크
+    console.log('회원명 글자수', userName && userName.length);
+    console.log('회원명 글자수', userName?.length);// 옵셔널 체이닝
+    
+    console.log('프로그램 정상 종료됨.');
+
+  </script>
+</head>
+<body>
+  <h1>07-01 연산자</h1>
+</body>
+</html>

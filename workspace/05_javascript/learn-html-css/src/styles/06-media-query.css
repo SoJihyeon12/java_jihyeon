@@ -1,0 +1,66 @@
+/*  중첩으로 미디어 쿼리 선언하기 */
+body {
+  /* All */
+  background: #ffc;
+
+  /* MD Screen */
+  @media (400px <= width <= 800px) {
+    background: #fcf;
+  }
+
+  /* LG Screen */
+  @media (800px <= width) {
+    background: #cff;
+  }
+}
+
+/* 미디어 쿼리를 활용한 플렉스 레이아웃 */
+.container {
+  block-size: 80vh;
+  border: 1px solid red;
+  display: flex;
+  flex-flow: column nowrap;
+
+  .header {
+    background: orange;
+  }
+
+  .wrapper {
+    border: 1px solid green;
+    flex: 1 1 0;
+    display: flex;
+    flex-flow: column nowrap;
+
+    @media (768px <= width) {
+      flex-direction: row;
+    }
+
+    @media (1024px <= width) {
+      flex-direction: row;
+    }
+
+    .content-wrapper {
+      border: 1px solid blue;
+      flex: 1;
+      display: flex;
+      flex-flow: column nowrap;
+
+      @media (1024px <= width) {
+        flex-direction: row;
+      }
+
+      .main {
+        flex: 1;
+        background: olivedrab;
+      }
+
+      .extra {
+        background: brown;
+      }
+    }
+  }
+
+  .footer {
+    background: silver;
+  }
+}

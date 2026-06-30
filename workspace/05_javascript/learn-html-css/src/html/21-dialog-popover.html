@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dialog 요소 | Likelion Bootcamp</title>
+    <style>
+      dialog.panel-dialog::backdrop {
+        background: linear-gradient(to right, #ffcccb, #ccffcc);
+      }
+    </style>
+    <script type="module">
+      // 필요한 요소 가져오기 (DOM 선택)
+      const showDialogBtn = document.querySelector('.show-dialog');
+      const closeDialogBtn = document.querySelector('.close-dialog');
+      const dialogEl = document.querySelector('.panel-dialog');
+
+      // 혜택 보기 버튼 클릭 시 다이얼로그 표시
+      showDialogBtn.addEventListener('click', () => {
+        dialogEl.showModal();
+      });
+
+      // 닫기 버튼 클릭 시 다이얼로그 닫기
+      closeDialogBtn.addEventListener('click', () => {
+        dialogEl.close();
+      });
+    </script>
+  </head>
+  <body>
+    <a href="/index.html">Index로 이동</a>
+    <hr />
+    <h1>dialog 요소</h1>
+    <button type="button" class="show-dialog">혜택 보기</button>
+    <hr />
+    <dialog class="panel-dialog" aria-labelledby="surpriseBenefits" aria-describedby="surpriseBenefitsDetails">
+      <h2 id="surpriseBenefits">깜짝 혜택!</h2>
+      <p id="surpriseBenefitsDetails">쉿! 고객님만을 위한 깜짝 할인 쿠폰 어제 빠뜨린 상품도 할인받고 내일 만나요!</p>
+      <div>
+        <a href="/">쿠폰 확인하기</a>
+      </div>
+      <div>
+        <button type="button" class="close-dialog">닫기</button>
+      </div>
+    </dialog>
+    <!-- popover 속성 -->
+    <button type="button" popovertarget="popoverContent" class="button-popover">팝오버 보기</button>
+    <div popover id="popoverContent">
+      <p>팝오버는 툴팁과 비슷한 UI 요소로, 추가적인 정보를 제공하거나 사용자와 상호작용할 수 있는 작은 창을 표시할 때 유용하다.</p>
+    </div>
+  </body>
+</html>

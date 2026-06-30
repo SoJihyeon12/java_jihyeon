@@ -1,0 +1,28 @@
+:root {
+  /* 파스텔 색상 */
+  --pink: #ffd1dc; /* 파스텔 핑크 */
+  --lavender: #e6e6fa; /* 파스텔 라벤더 */
+  --mint: #b2f2bb; /* 파스텔 민트 */
+  --blue: #a2ddf0; /* 파스텔 블루 */
+  --yellow: #fff9c4; /* 파스텔 옐로우 */
+  --coral: #ffb6c1; /* 파스텔 코랄 */
+  --green: #c8e6c9; /* 파스텔 그린 */
+  --purple: #d1c4e9; /* 파스텔 퍼플 */
+  --orange: #ffccbc; /* 파스텔 오렌지 */
+  --gray: #cfd8dc; /* 파스텔 그레이 */
+  --peach: #ffe5b4; /* 파스텔 피치 */
+  --lilac: #c8a2c8; /* 파스텔 라일락 */
+  --teal: #afeeee; /* 파스텔 틸 */
+  --rose: #ffc0cb; /* 파스텔 로즈 */
+  --sky-blue: #87ceeb; /* 파스텔 스카이 블루 */
+  --lemon: #fffacd; /* 파스텔 레몬 */
+  --mauve: #e0b0ff; /* 파스텔 모브 */
+  --aqua: #b2ebf2; /* 파스텔 아쿠아 */
+  --apricot: #fdd5b1; /* 파스텔 애프리콧 */
+  --ivory: #fffff0; /* 파스텔 아이보리 */
+  --dark-blue: #4a6ee0; /* 파스텔 다크블루 */
+  --dark-green: #03cc5c; /* 아바타 그린*/
+
+  --black: #121212;
+  --white: #fff;
+}

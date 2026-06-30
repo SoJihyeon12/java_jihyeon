@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 이미지</title>
+    <style>
+      /* 반응형 이미지 */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .just {
+        border: 1px solid red;
+
+        img {
+          border: inherit;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>반응형 이미지</h1>
+    <div class="lezhin">
+      <picture>
+        <source srcset="./../assets/rwd/lezhin-wide.webp" media="(width >= 768px)" />
+        <img src="./../assets/rwd/lezhin-narrow.webp" alt="" />
+      </picture>
+    </div>
+    <hr />
+    <div class="screen">
+      <picture>
+        <source srcset="./../assets/rwd/image-1x.png 1x, ./../assets/rwd/image-2x.png 2x, ./../assets/rwd/image-3x.png 3x" />
+        <img src="./../assets/rwd/image-src.png" alt="" />
+      </picture>
+    </div>
+    <hr />
+    <figure class="just">
+      <img src="./../assets/kream/just-dropped/png/dropped-product-01.png" alt="모자" width="500" height="500" />
+      <figcaption>아디다스</figcaption>
+    </figure>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+.container {
+  box-sizing: border-box;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* inline-size: 302px; */
+
+  .header {
+    background: yellow;
+    flex-basis: 50px;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  .main {
+    background: skyblue;
+    flex-basis: 100px;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  .sidebar {
+    background: orange;
+    flex-basis: 80px;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  .extra {
+    background: lime;
+    flex-basis: 120px;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  .footer {
+    background: pink;
+    flex-basis: 50px;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}

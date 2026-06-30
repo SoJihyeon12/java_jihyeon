@@ -1,0 +1,261 @@
+:root {
+  --white: #fff;
+  --green-100: #03cc5c;
+  --green-200: #1bf008;
+  --green-300: #03cca8;
+
+  --blue-100: #e9f0fd;
+  --red-100: #ff1414;
+
+  --gray-100: #bcc3c7;
+  --gray-200: #9b9a90;
+  --gray-300: #6d7478;
+
+  --primary-color: var(--green-100);
+  --start-color: var(--green-200);
+  --end-color: var(--green-300);
+  --active-color: var(--blue-100);
+}
+
+/* 접근성 관련 CSS */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: -1px;
+  padding: 0;
+  border-width: 0;
+  clip-path: inset(50%);
+}
+
+/* 네이버 로그인 컴포넌트 */
+/* 로고 컴포넌트 */
+.logo {
+  display: block;
+  inline-size: clamp(164px, 51.25%, 230px);
+
+  svg {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+}
+
+/* 입력 서식 */
+.input {
+  &:has(:user-invalid) .error-message {
+    visibility: visible;
+  }
+
+  input {
+    inline-size: 100%;
+    min-inline-size: 0;
+    block-size: 48px;
+    border: 1px solid var(--gray-200);
+    padding-inline-start: 0.5em;
+
+    &:read-only {
+      background: var(--gray-100);
+    }
+  }
+
+  .error-message {
+    visibility: hidden;
+    margin-block-start: 0.5em;
+    font-size: 0.75rem;
+    color: var(--red-100);
+  }
+}
+
+/* 버튼 컴포넌트 */
+.button {
+  border: 0;
+  padding: 1em;
+
+  &.button-fill {
+    background: var(--primary-color);
+    color: var(--white);
+  }
+
+  &:disabled {
+    background: var(--gray-200);
+  }
+
+  &:not(:disabled):hover,
+  &:not(:disabled):focus,
+  &:not(:disabled):active {
+    background: var(--green-300);
+  }
+}
+
+/* 체크박스 */
+.checkbox {
+  position: relative;
+
+  /* 배경 이미지 활용 */
+  &.bg-icon {
+    label {
+      background: url(/assets/naver/unchecked.svg) no-repeat;
+      padding-inline-start: 32px;
+    }
+
+    input:checked + label {
+      background-image: url(/assets/naver/checked.svg);
+    }
+  }
+
+  /* svg 이미지 활용 */
+  &.svg-icon {
+    &:has(:checked) .area,
+    &:has(:checked) .border {
+      fill: var(--primary-color);
+    }
+
+    &:has(:checked) .marker {
+      fill: var(--white);
+    }
+
+    label {
+      display: flex;
+      flex-flow: nowrap row;
+      align-items: center;
+      column-gap: 8px;
+    }
+  }
+
+  input {
+    position: absolute;
+    inline-size: 24px;
+    block-size: 24px;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    margin: 0;
+    appearance: none;
+  }
+
+  label {
+    display: block;
+    align-content: center;
+    block-size: 24px;
+  }
+}
+
+/* 링크 텍스트 */
+.textlink-new {
+  font-weight: 700;
+}
+
+/* 스위치 */
+.switch {
+  position: relative;
+
+  input {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0;
+    margin: 0;
+    inline-size: 2em;
+    block-size: 24px;
+    appearance: none;
+  }
+
+  label {
+    display: block;
+    inline-size: 2em;
+    block-size: 24px;
+    align-content: center;
+
+    &::after {
+      content: 'OFF';
+    }
+  }
+
+  input:checked + label {
+    &::after {
+      content: 'ON';
+    }
+  }
+}
+
+/* 네이버 로그인 레이아웃 */
+/* 헤더 */
+.header {
+  padding-block: 70px 45px;
+
+  @media (width>= 768px) {
+    padding-block: 100px 50px;
+  }
+
+  /* 로고 */
+  .logo {
+    margin-inline: auto;
+  }
+}
+
+/* 메인 콘텐츠 */
+.main {
+  padding-inline: 15px;
+
+  /* 로그인 폼 */
+  .login-form {
+    display: flex;
+    flex-flow: nowrap column;
+    row-gap: 10px;
+
+    @media (width>= 768px) {
+      inline-size: 460px;
+      margin-inline: auto;
+    }
+
+    .checkbox-wrapper {
+      order: 1;
+      display: flex;
+      flex-flow: nowrap row;
+      align-items: center;
+      column-gap: 8px;
+
+      .checkbox {
+        margin-inline-start: auto;
+      }
+
+      .textlink-new,
+      .switch {
+        display: none;
+      }
+
+      @media (width>= 768px) {
+        .textlink-new,
+        .switch {
+          display: block;
+        }
+
+        .checkbox {
+          margin-inline-start: 0;
+        }
+
+        .textlink-new {
+          margin-inline-start: auto;
+        }
+      }
+    }
+
+    /* 버튼 */
+    .button {
+      inline-size: 100%;
+    }
+  }
+}
+
+/* visibility 속성 */
+.like {
+  background: yellow;
+  padding: 10px;
+
+  .lion {
+    background: pink;
+    padding-block: 10px;
+    visibility: hidden;
+  }
+}

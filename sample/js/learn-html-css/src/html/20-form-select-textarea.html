@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼 (select, textarea) 요소</title>
+  </head>
+  <body>
+    <h1>폼 (select, textarea) 요소</h1>
+    <form action="서버 URL" method="post">
+      <div>
+        <label for="memo">메모</label>
+        <textarea name="meno" id="memo" rows="10" cols="50">의견을 남겨주세요</textarea>
+      </div>
+      <hr />
+      <!-- 콤보 박스 -->
+      <div>
+        <label class="sr-only" for="petSelect-1">반려동물</label>
+        <select name="petSelect-1" id="petSelect-1">
+          <option aria-hidden="true" value="">반려동물을 선택하세요.</option>
+          <option value="dog">강아지</option>
+          <option value="cat">고양이</option>
+          <option value="hamster">햄스터</option>
+          <option value="spider">거미</option>
+          <option value="goldsfish">열대어</option>
+          <option value="parrot">패럿</option>
+        </select>
+      </div>
+      <hr />
+      <!-- 리스트 박스 -->
+      <div>
+        <label class="sr-only" for="petSelect-2">반려동물</label>
+        <select size="10" multiple name="petSelect-2" id="petSelect-2">
+          <option aria-hidden="true" value="">반려동물을 선택하세요.</option>
+          <option value="dog">강아지</option>
+          <option value="cat">고양이</option>
+          <option value="hamster">햄스터</option>
+          <option value="spider">거미</option>
+          <option value="goldsfish">열대어</option>
+          <option value="parrot">패럿</option>
+        </select>
+      </div>
+    </form>
+  </body>
+</html>

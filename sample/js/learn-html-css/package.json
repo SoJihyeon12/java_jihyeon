@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier . --check",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "vite": "^8.1.0"
+  }
+}

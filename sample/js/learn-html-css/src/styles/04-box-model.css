@@ -1,0 +1,31 @@
+h1 {
+  background-color: yellow;
+  display: inline;
+  font-size: 20px;
+  inline-size: 500px;
+}
+span {
+  background-color: pink;
+  /* display: block; */
+  font-size: 60px;
+  /* width 속성 */
+  /* width: 300px; */
+  inline-size: 300px;
+  /* height 속성 */
+  block-size: 100px;
+}
+
+.bootcamp,
+.backend {
+  border: 5px solid green;
+}
+
+.bootcamp {
+  background-color: yellow;
+  margin: 20px;
+}
+.backend {
+  background-color: pink;
+  padding: 20px;
+  margin: 10px;
+}

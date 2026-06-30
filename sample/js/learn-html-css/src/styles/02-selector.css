@@ -1,0 +1,17 @@
+/* 요소 선택자 */
+div {
+  font-size: 2em;
+}
+
+/* 클래스 선택자 */
+.note {
+  color: red;
+}
+.backend {
+  font-size: 1.5em;
+}
+
+/* 아이디 선택자 */
+#bootcamp {
+  background-color: green;
+}

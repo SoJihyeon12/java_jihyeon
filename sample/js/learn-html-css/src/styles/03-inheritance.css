@@ -1,0 +1,20 @@
+.bootcamp.backend {
+  color: blue;
+}
+
+.backend {
+  color: green;
+  border: 5px solid red;
+}
+
+.note {
+  font-size: 36px;
+}
+
+.parent .child {
+  color: pink;
+}
+
+.child {
+  color: yellow !important;
+}

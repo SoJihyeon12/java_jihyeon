@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼 관련 요소 (input)</title>
+  </head>
+  <body>
+    <h1>폼 관련 요소 (input)</h1>
+    <form action="서버 URL" method="post">
+      <!-- 암묵적인 레이블링 -->
+      <div>
+        <label>
+          이름
+          <input type="text" />
+        </label>
+      </div>
+      <!-- 명시적인 레이블링 -->
+      <div>
+        <label for="userID">아이디</label>
+        <input id="userID" type="text" required />
+      </div>
+      <div>
+        <label for="userEmail">이메일</label>
+        <input id="userEmail" type="email" placeholder="guest@likelion.net" />
+      </div>
+      <div>
+        <label for="userPW">비밀번호</label>
+        <input id="userPW" type="password" required />
+      </div>
+      <div>
+        <label for="phoneNumber">연락처</label>
+        <input type="text" id="phoneNumber" aria-label="국번 또는 앞자리" /> - <input type="text" aria-label="연락처 가운데자리" /> -
+        <input type="text" aria-label="연락처 마지막자리" />
+      </div>
+      <div>
+        <div>성별</div>
+        <label for="male">남자</label><input type="radio" name="gender" id="male" /> <label for="female">여자</label><input type="radio" name="gender" id="female" />
+      </div>
+      <div>
+        <div>교육과목</div>
+        <input type="checkbox" name="study" id="html" />HTML<label for="html"></label> <input type="checkbox" name="study" id="css" />CSS<label for="css"></label>
+      </div>
+
+      <div><input type="submit" value="전송" /></div>
+    </form>
+  </body>
+</html>
