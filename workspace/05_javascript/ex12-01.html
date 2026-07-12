@@ -13,23 +13,44 @@
       - 매개 변수가 하나만 있다면 매개변수의 괄호 생략 가능
     */
 
+    // 선언문 방식의 함수 정의
+    function add(x,y){
+      return x + y;
+    }
+
+    console.log(add(10,20));
+
     // 기존 함수(표현식)
-
-
+    let sum = function(x, y){
+      return '표현식: ' + (x + y);
+    };
     // 화살표 함수
-
+    sum = (x, y) => {
+      return '화살표: ' + (x + y);
+    };
 
     // 화살표 함수 축약
+    sum = (x, y) =>  x + y;
+    
+    console.log(sum(30, 40));
+    
 
 
     // 기존 함수
-
+    let add10 = function(x){
+      return x + 10;
+    };
 
     // 화살표 함수
+    add10 = (x) => {
+      return '화살표: ' + (x + 10);
+    };
 
 
     // 화살표 함수 축약
+    add10 = x => x + 10;
 
+    console.log(add10(100));
 
   </script>
 </head>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시글 등록</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 40px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-label {
+      display: inline-block;
+      width: 100px;
+      font-weight: bold;
+    }
+    input[type="text"], textarea, select {
+      width: 300px;
+      padding: 5px;
+    }
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+    .textarea-group {
+      display: flex;
+      align-items: flex-start;
+    }
+    .radio-group {
+      display: inline-block;
+    }
+    button {
+      padding: 8px 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>게시글 등록</h1>
+  
+  <form id="writeForm" action="/" method="GET">
+    <div class="form-group">
+      <label for="title" class="form-label">제목</label>
+      <input type="text" id="title" name="title" placeholder="제목을 입력하세요">
+    </div>
+    
+    <div class="form-group">
+      <label for="writer" class="form-label">작성자</label>
+      <input type="text" id="writer" name="writer" placeholder="작성자 이름">
+    </div>
+    
+    <div class="form-group">
+      <label for="category" class="form-label">카테고리</label>
+      <select id="category" name="category">
+        <option value="">-- 카테고리 선택 --</option>
+        <option value="notice">공지사항</option>
+        <option value="free">자유게시판</option>
+        <option value="qna">질문답변</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">공개 여부</label>
+      <div class="radio-group">
+        <input type="radio" id="visibleY" name="visible" value="Y" checked>
+        <label for="visibleY">공개</label>
+        <input type="radio" id="visibleN" name="visible" value="N">
+        <label for="visibleN">비공개</label>
+      </div>
+    </div>
+    
+    <div class="form-group textarea-group">
+      <label for="content" class="form-label">내용</label>
+      <textarea id="content" name="content" placeholder="내용을 입력하세요"></textarea>
+    </div>
+    
+    <button type="submit" id="submitBtn">등록</button>
+  </form>
+
+  <script>
+    // 1. form 요소를 탐색하여 submit 이벤트 리스너 등록
+    const writeForm = document.querySelector('#writeForm');
+    
+    writeForm.addEventListener('submit', function(event) {
+      // 브라우저의 기본 동작(action 주소로 서버에 요청하는 작업)을 취소
+      event.preventDefault();
+
+      // 2. 제목 검증
+      const title = document.querySelector('#title');
+      if(title.value.trim() === ''){
+        alert('제목을 입력하세요.');
+        title.focus();
+        return;
+      }
+      
+      // 3. 작성자 검증
+      const writer = document.querySelector('#writer');
+      if(writer.value.trim() === ''){
+        alert('작성자 이름을 입력하세요.');
+        writer.focus();
+        return;
+      }
+      
+      // 4. 카테고리 선택 검증
+      const category = document.querySelector('#category');
+      if(category.value.trim() === ''){
+        alert('카테고리를 선택하세요.');
+        category.focus();
+        return;
+      }
+      
+      // 5. 내용 검증
+      const content = document.querySelector('#content');
+      if(content.value.trim() === ''){
+        alert('내용을 작성하세요.');
+        content.focus();
+        return;
+      }
+      
+      // 최종 입력한 게시글 정보 객체 생성 및 출력
+      const post = {
+        title: title.value,
+        writer: writer.value,
+        category: category.value,
+        visible: document.querySelector('input[name="visible"]:checked').value,
+        content: content.value
+      };
+      console.log('최종 입력한 게시글 정보', post);
+
+      alert('게시글 등록 요청이 정상적으로 전송되었습니다.');
+    });
+
+  </script>
+</body>
+</html>
