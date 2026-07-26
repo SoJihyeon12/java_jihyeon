@@ -1,9 +1,10 @@
 package ch02.list;
+// 이 코드는 MyLinkedList가 제대로 동작하는지 테스트하는 프로그램
 
 public class MyLinkedListTest {
     void main(){
         // MyLinkedList 객체를 생성한다.
-        MyList arr = new MyLinkedList();
+        MyList arr = new MyLinkedList(); //arr를 통해 MyLinkedList의 메서드를 사용할 수 있습니다.
 
         // MyLinkedList에 "데이터-0" 부터 "데이터-4"까지의 문자열을 담는다.(appendTo())
         for(int i=0; i<5; i++){

@@ -1,19 +1,21 @@
 package ch02;
+// 이 코드는 자바 컬렉션(Collection Framework) 을 배우기 위한 예제입니다.
+// 이 예제의 목적은 List, Set, Collection의 차이와 공통점을 이해하는 것입니다.
 
 import java.util.*;
 
 public class CollectionTest {
     void main(){
-//        String[] fruits = new String[5];
+//        String[] fruits = new String[5]; // 배열 5개만들고 과일 그 안에 넣음
 //        fruits[0] = "바나나";
 //        fruits[1] = "사과";
 //        fruits[2] = "오렌지";
 //        fruits[3] = "파인애플";
 //        fruits[4] = "수박";
 
-        // List
-        // 중복 O
-        // 순서 O
+        // List는
+        // 중복가능 O
+        // 저장한 순서 유지 가능 O
 
         //바나나
         //사과
@@ -25,8 +27,8 @@ public class CollectionTest {
 //        List<String> fruits = new LinkedList<>();
 //        List<String> fruits = new Vector<>();
 
-        // Set
-        // 데이터 중복 X
+        // Set은
+        // 데이터 중복 X, 즉, 같은 데이터를 두 번 저장할 수 없다.
 
         //수박
         //오렌지
@@ -34,7 +36,7 @@ public class CollectionTest {
         //바나나
         //파인애플
 
-        // 저장한 순서 X
+        // HashSet 특징: 저장한 순서 유지 안함, 중복 제거
 //        Set<String> fruits = new HashSet<>();
 
         //바나나
@@ -43,7 +45,7 @@ public class CollectionTest {
         //오렌지
         //파인애플
 
-        // 정렬 O
+        // TreeSet 특징: 자동 정렬 O, 중복 제거
 //        Set<String> fruits = new TreeSet<>();
 
         //바나나
@@ -52,7 +54,7 @@ public class CollectionTest {
         //파인애플
         //수박
 
-        // 저장한 순서 O
+        // LinkedHashSet: 저장한 순서 듀지 O, 중복 제거
         Set<String> fruits = new LinkedHashSet<>();
 
         fruits.add("바나나");
@@ -72,8 +74,8 @@ public class CollectionTest {
 //        }
 //    }
 
-    void printFruits(Collection<String> fruits){
-        for(String fruit : fruits){
+    void printFruits(Collection<String> fruits){ // Collection<String>을 사용하는 것이 핵심, 왜냐하면 Collection을 사용하면 ArrayList, LinkedList, Vector, HashSet, TreeSet, LinkedHashSet를 모두 받을 수 있기 때문
+        for(String fruit : fruits){ // 컬렉션 안에 있는 데이터를 하나씩 꺼내라는 것입니다.
             System.out.println(fruit);
         }
     }

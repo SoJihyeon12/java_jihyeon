@@ -1,18 +1,18 @@
 -- 기존 테이블 삭제
-DROP TABLE IF EXISTS reply;
+DROP TABLE IF EXISTS reply; -- reply 테이블이 존재하면 삭제하라
 DROP TABLE IF EXISTS post;
 DROP TABLE IF EXISTS member;
 
 -- 회원 테이블 생성
 CREATE TABLE member (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    phone CHAR(11),
-    recommender_id INT,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT fk_member_member FOREIGN KEY (recommender_id) REFERENCES member(id) ON DELETE SET NULL
+    id INT AUTO_INCREMENT PRIMARY KEY, -- id라는 정수형 컬럼을 생성하고, 값은 자동으로 1씩 증가하며(AUTO_INCREMENT), 테이블의 기본 키(Primary Key)로 지정한다.
+    email VARCHAR(100) NOT NULL UNIQUE, -- email이라는 최대 100자의 문자열 컬럼을 생성하고, 반드시 값을 입력해야 하며, 같같은 이메일은 중복해서 저장할 수 없도록 한다. VARCHAR (가변 길이): 입력한 길이만큼만 저장한다.
+    password VARCHAR(255) NOT NULL, -- password라는 최대 255자의 문자열 컬럼을 생성하고, 반드시 값을 입력해야 함
+    name VARCHAR(50) NOT NULL, -- name이라는 최대 50자의 문자열 컬럼을 생성하고, 반드시 값을 입력해야 함
+    phone CHAR(11), -- CHAR (고정 길이): 입력과 함께 남은 공간을 공백으로 채워서 11글자로 저장
+    recommender_id INT, -- recommender_id라는 이름의 컬럼을 만들고, 정수(Integer) 값을 저장하도록 설정
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP, -- created_at이라는 컬럼을 만들고, 날짜와 시간을 저장하며, 값을 입력하지 않으면 현재 날짜와 시간이 자동으로 저장되도록 설정하는 것을 의미
+    CONSTRAINT fk_member_member FOREIGN KEY (recommender_id) REFERENCES member(id) ON DELETE SET null -- recommender_id를 외래 키(Foreign Key)로 설정하여 member 테이블의 id를 참조하도록 하고, 추천인 회원이 삭제되면 recommender_id 값을 NULL로 변경하는 제약조건을 의미
 );
 
 -- 게시글 테이블 생성
@@ -103,25 +103,25 @@ INSERT INTO reply (post_id, member_id, content, created_at) VALUES
     (3, 1, '댓글 주신 분들 모두 감사드립니다.', '2026-05-27 17:00:00');
 
 -- 사용자 삭제
-drop user if exists 'user1'@'localhost';
+drop user if exists 'user1'@'localhost'; -- localhost에서 접속하는 user1 사용자가 존재하면 삭제하고, 존재하지 않아도 오류를 발생시키지 않는 명령
 
 
 -- 로컬 호스트 전용 계정 생성
-CREATE USER 'user1'@'localhost'
+CREATE USER 'user1'@'localhost' -- localhost에서 접속할 수 있는 user1이라는 사용자를 생성하고, 비밀번호를 1111로 설정하는 명령
     IDENTIFIED BY '1111';
 
 
 -- 개발자용 권한 그룹 생성
-drop role if exists 'developer';
+drop role if exists 'developer'; -- 기존에 developer 역할(Role)이 있으면 먼저 삭제하고, 새로운 developer 역할을 다시 생성하는 명령
 CREATE ROLE 'developer';
 
 -- 개발자 그룹에 board_db의 모든 테이블에 대한 CRUD 권한 부여
-GRANT SELECT, INSERT, UPDATE, DELETE ON board_db.* TO 'developer';
+GRANT SELECT, INSERT, UPDATE, DELETE ON board_db.* TO 'developer'; -- developer 역할(Role)에 board_db 데이터베이스의 모든 테이블에 대해 조회, 추가, 수정, 삭제 권한을 부여하는 명령
 
 -- user1에게 개발자 그룹 권한 부여
-GRANT 'developer' TO 'user1'@'localhost';
+GRANT 'developer' TO 'user1'@'localhost'; -- user1@localhost 사용자에게 developer 역할(Role)을 부여하는 명령
 
 -- user1 로그인 시 developer 권한 그룹이 기본으로 활성화되도록 설정
-SET DEFAULT ROLE 'developer' TO 'user1'@'localhost';
+SET DEFAULT ROLE 'developer' TO 'user1'@'localhost'; -- user1@localhost 사용자가 로그인할 때 developer 역할(Role)을 기본(Default) 역할로 자동 활성화하도록 설정하는 명령
 
 

@@ -1,6 +1,15 @@
 package ch06.lambda;
+// 이 코드는 람다식(Lambda Expression) 을 사용하기 위해 만든 함수형 인터페이스(Functional Interface) 입니다.
+// 쉽게 말하면, "두 개의 숫자를 받아 더한 결과를 반환하는 기능" 을 정의한 인터페이스입니다.
+// 람다식(Lambda Expression) 은 메서드를 더 간단하게 표현하는 문법입니다. 쉽게 말하면 "한 번만 사용할 메서드를 짧게 쓰는 방법"입니다.
 
-@FunctionalInterface
-public interface Calculator {
-    int add(int a, int b);
+@FunctionalInterface // 이것은 함수형 인터페이스라는 것을 나타내는 애노테이션입니다. 추상 메서드가 하나만 있도록 보장하는 애노테이션입니다.
+public interface Calculator { // Calculator라는 인터페이스를 만듭니다. 무엇을 할 수 있는지(기능)를 정의하는 설계도가 인터페이스이다.
+    int add(int a, int b); // 이 인터페이스가 가진 유일한 추상 메서드입니다. 이 인터페이스는 람다식과 함께 사용하기 위해 만들어졌습니다.
 }
+// 구현은 어디에 있을까요?
+//인터페이스에는 구현이 없습니다. 선언만 있습니다.
+// 실제 동작은 구현 클래스나 람다식에서 작성합니다.
+
+// 람다식
+//람다식을 사용하면 클래스를 만들 필요가 없습니다.

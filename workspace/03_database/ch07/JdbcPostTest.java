@@ -1,4 +1,6 @@
 package ch07;
+// 이 클래스는 JDBC를 이용하여 post(게시글) 테이블의 CRUD(Create, Read, Update, Delete)를 구현한 프로그램입니다.
+// 앞에서 본 JdbcMemberTest와 구조는 거의 같고, 대상 테이블만 member → post로 바뀐 것이라고 생각하면 됩니다.
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,14 +14,14 @@ public class JdbcPostTest {
     private static final String DB_PASSWORD = "1111";
 
     public static void main(String[] args){
+        findAll(); // 게시글 전체 조회
+        insert(2, "2번이 등록한 게시글", "안녕하세요. 자바 공부 해요."); // 게시글 등록
+        findById(10); // 10번 게시글 조회
+        update(10, "수정된 10번 게시글", "수정했어요"); // 게시글 수정
         findAll();
-        insert(2, "2번이 등록한 게시글", "안녕하세요. 자바 공부 해요.");
-        findById(10);
-        update(10, "수정된 10번 게시글", "수정했어요");
-        findAll();
-        delete(10);
+        delete(10); // 게시글 삭제
 
-        deleteAll(2);
+        deleteAll(2); // 2번 회원의 게시글 모두 삭제
         findAll();
     }
 

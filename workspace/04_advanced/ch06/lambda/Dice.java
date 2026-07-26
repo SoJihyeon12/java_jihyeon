@@ -1,6 +1,12 @@
 package ch06.lambda;
+// 이 코드는 람다식(Lambda Expression) 에서 사용하기 위한 함수형 인터페이스입니다.
+// 쉽게 말하면 "정수 하나를 입력받아 정수 하나를 반환하는 기능" 을 정의한 인터페이스입니다.
 
-@FunctionalInterface
-public interface Dice {
-    public int apply(int t);
+
+@FunctionalInterface // 이 애노테이션은 "이 인터페이스는 함수형 인터페이스입니다." 라고 컴파일러에게 알려주는 역할을 합니다. 함수형 인터페이스란? 추상 메서드가 딱 하나만 있는 인터페이스입니다.
+public interface Dice { // Dice라는 인터페이스를 만듭니다. 인터페이스는 어떤 기능을 제공할지(설계도)를 정의하는 것입니다.
+    public int apply(int t); // 현재 Dice에는 추상 메서드가 하나뿐입니다. 그래서 함수형 인터페이스가 됩니다. 만약 메서드를 하나 더 추가하면 컴파일 오류가 발생합니다.
 }
+
+// 왜 이름이 Dice일까요?
+// 이 인터페이스는 주사위를 만드는 예제에서 자주 사용됩니다.

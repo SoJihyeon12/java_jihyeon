@@ -1,13 +1,13 @@
 -- 1번 회원의 이름을 김하루로 수정
-select * from member where ID = 1;
+select * from member where ID = 1; -- 1번 회원의 모든 정보 조회
 
-UPDATE member
-    SET name = '김하루'
-    WHERE id = 1;
+UPDATE member -- UPDATE는 기존 데이터를 변경(수정) 할 때 사용하는 명령어, 즉, 회원 테이블의 데이터를 수정한다.
+    SET name = '김하루' -- SET: 어떤 컬럼을 어떤 값으로 변경할지 지정한다.
+    WHERE id = 1; -- (조건) id가 1인 회원만 수정한다
 
 -- 1번 게시글의 제목과 내용을 변경
-UPDATE post
-    SET title = '수정된 첫 번째 게시글',
-        content = '수정이 반영된 본문입니다.'
-    WHERE id = 1;
+UPDATE post -- 게시글 테이블의 내용 변경
+    SET title = '수정된 첫 번째 게시글', -- id가 1인 게시글의 제목을 '수정된 첫 번째 게시글'로 수정
+        content = '수정이 반영된 본문입니다.' -- 내용을 '수정이 반영된 본문입니다.'로 수정한다.
+    WHERE id = 1; -- (조건) id가 1인 게시글
 
